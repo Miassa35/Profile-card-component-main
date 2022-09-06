@@ -1,0 +1,108 @@
+:root{
+    --bg-color: hsl(185, 75%, 39%);
+    --heading-color: hsl(229, 23%, 23%);
+    --paragraph-color: hsl(227, 10%, 46%);
+    --neutral-color: hsl(0, 0%, 59%);
+    --main-fs: 18px;
+    --main-ff: 'Kumbh Sans', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--main-ff);
+}
+body::before{
+    content: url(images/bg-pattern-top.svg);
+    position: absolute;
+    bottom: 43%;
+    right: 35% ;
+}
+@media screen and (min-width:660px) {
+    body::before{
+       bottom: 25%;
+       right: 55%;
+    }
+}
+body::after{
+    content:url(images/bg-pattern-bottom.svg);
+    position: absolute;
+    top: 47%;
+    left: 29%;
+}
+@media screen and (min-width:660px) {
+    body::after{
+        top: 50%;
+        left: 52%;
+    }
+}
+.card{
+    width: 90%;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 4px 3px 50px var(--bg-color);
+    /*I had to put a z-index otherwise the body background make it appear below card background*/
+    z-index: 999;
+}
+@media screen and (min-width:660px){
+    .card{
+        max-width: 350px;
+    }
+}
+.card__background{
+    background: url(images/bg-pattern-card.svg) no-repeat;
+    background-size: cover;
+    padding-top: 42%;
+}
+.card__info{
+    text-align: center;
+    margin-top: -5.3em;
+    padding: 1.5em;
+}
+img{
+    border-radius: 50%;
+    border: 7px solid whitesmoke;
+}
+h1{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: .5em 0;
+}
+span{
+    color: var(--paragraph-color);
+    font-weight: 400;
+}
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--paragraph-color);
+}
+.card__stat{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    text-align: center;
+}
+@media screen and (min-width:660px){
+    .card__stat{
+        justify-content: space-evenly;
+    }
+}
+.card__stat--info{
+    line-height: .9em;
+}
+.text{
+    color: var(--neutral-color);
+    font-size: .8rem;
+}
